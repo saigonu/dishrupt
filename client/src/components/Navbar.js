@@ -22,16 +22,19 @@ export const Navbar = () => {
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/create-recipe">Create Recipe</Link>
-        <Link to="/saved-recipes">Saved Recipes</Link>
+        
       </div>
       {!cookies.access_token ? (
         <Link to="/auth" className="buton">Login / Register</Link>
-      ) : (
+      ) : ( 
+        <>
+      <Link to="/saved-recipes">Saved Recipes</Link>
         <div className="navbar-button-container">
           <button className="logout-button" onClick={logout}>
             Logout
           </button>
         </div>
+        </>
       )}
     </div>
   );
