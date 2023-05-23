@@ -16,26 +16,28 @@ export const Navbar = () => {
 
   return (
     <div className="navbar">
-    <div className="navbar-logo">
+      <div className="navbar-logo">
         <img src={logo} alt="Logo" />
       </div>
       <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/create-recipe">Create Recipe</Link>
-        
+        <Link to="/" className="navbar-link">Home</Link>
+        <Link to="/create-recipe" className="navbar-link">Create Recipe</Link>
+        {!cookies.access_token && (
+          <Link to="/auth" className="buton">Login / Register</Link>
+        )}
+        {cookies.access_token && (
+          <Link to="/saved-recipes" className="navbar-link">Saved Recipes</Link>
+        )}
       </div>
-      {!cookies.access_token ? (
-        <Link to="/auth" className="buton">Login / Register</Link>
-      ) : ( 
-        <>
-      <Link to="/saved-recipes">Saved Recipes</Link>
+      {cookies.access_token && (
         <div className="navbar-button-container">
           <button className="logout-button" onClick={logout}>
             Logout
           </button>
         </div>
-        </>
       )}
     </div>
   );
+  
+  
 };

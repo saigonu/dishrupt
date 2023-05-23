@@ -50,13 +50,15 @@ input {
   border-radius: 5px;
 }
 
+
+
 .navbar {
   margin: 0;
   width: 100%;
   height: 80px;
   background-image: linear-gradient(to right, #ff4b2b, #ff416c);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
   align-items: center;
   color: white;
@@ -108,6 +110,7 @@ li {
 
 .navbar-links {
   display: flex;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
@@ -118,7 +121,13 @@ li {
   margin-right: 10px;
 }
 
+.navbar-link {
+  margin-right: 10px;
+}
 
+.navbar-button-container {
+  margin-left: 10px;
+}
 
 .logout-button {
   background-color: #ffffff;
